@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import QuestionnaireForm from '../components/QuestionnaireForm';
 import Footer from '../components/Footer';
 
 function QuestionnairePage() {
+    const [city, setCity] = useState("City");
 
     const pageStyle = {
         backgroundImage: 'url(assets/form_background.jpg)',
@@ -18,8 +19,12 @@ function QuestionnairePage() {
             <main>
                 <div id="form_wrapper">
                     <h3>Traveler's Questionnaire</h3>
-                    <QuestionnaireForm />
-                    <p id="form_result">Best city for you is: <span id="city_result">City</span></p>
+
+                    <QuestionnaireForm onResult={(capital) => setCity(capital)} />
+
+                    <p id="form_result">
+                        Best city for you is: <span id="city_result">{city}</span>
+                    </p>
                 </div>
             </main>
             <Footer />

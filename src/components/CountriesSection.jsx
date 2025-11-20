@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PlanePath from "./PlanePath";
 
 function CountriesSection() {
+    const navigate = useNavigate();
+
     const [countries, setCountries] = useState([]);
     const [activeContinent, setActiveContinent] = useState(null);
     const [visible, setVisible] = useState(false);
     const [loading, setLoading] = useState(false);
+
 
     const handleContinentClick = async (continent) => {
         setActiveContinent(continent);
@@ -21,11 +25,14 @@ function CountriesSection() {
                 const data = await response.json();
 
                 const countryList = data
-                    .filter((c) => c.capital && c.capital.length > 0)
+                    .filter((c) => c.capital && c.capital.length > 0 && c.name.common !== 'Russia' && c.name.common !== 'Belarus')
                     .map((c) => ({
                         name: c.name.common,
-                        capital: c.capital[0],
-                    }));
+                        capital: c.capital[0].replace(/\s/g, '_'),
+                    }))
+                    .sort((a, b) => {
+                        return a.name.localeCompare(b.name);
+                    });
 
                 setCountries(countryList);
             } catch (error) {
@@ -36,6 +43,10 @@ function CountriesSection() {
         } else {
             setCountries([]);
         }
+    };
+
+    const handleCapitalClick = (capitalName) => {
+        navigate(`/city/${capitalName}`);
     };
 
     return (
@@ -67,7 +78,12 @@ function CountriesSection() {
                         <p className="progress">Loading...</p>
                     ) : countries.length > 0 ? (
                         countries.map((country) => (
-                            <p className="country" id={country.capital} key={country.name}>
+                            <p
+                                className="country"
+                                key={country.name}
+                                onClick={() => handleCapitalClick(country.capital)}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 {country.name}
                             </p>
                         ))

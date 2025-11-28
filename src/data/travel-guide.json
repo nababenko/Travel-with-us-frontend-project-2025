@@ -500,35 +500,35 @@
           "place_name": "Kyiv Pechersk Lavra",
           "intriguing_title": "The Monastic Marvel",
           "description": "Kyiv Pechersk Lavra, also known as the Kyiv Monastery of the Caves, is a historic Orthodox Christian monastery founded in 1051. It is a UNESCO World Heritage Site and features stunning architecture and ancient catacombs. The site is a major pilgrimage destination and holds significant religious and cultural importance in Ukraine.",
-          "coordinates": "50.4501, 30.5119",
+          "coordinates": "50.43511607615397, 30.557318679981773",
           "permanent_wiki_link": "https://en.wikipedia.org/wiki/Kyiv_Pechersk_Lavra"
         },
         {
           "place_name": "Saint Sophia Cathedral",
           "intriguing_title": "A Testament to Byzantine Architecture",
           "description": "Saint Sophia Cathedral is one of the most important architectural monuments in Ukraine, built in the 11th century. It is renowned for its stunning mosaics and frescoes, which are among the oldest in Eastern Europe. The cathedral is also a UNESCO World Heritage Site and serves as a symbol of Kyiv's historical significance.",
-          "coordinates": "50.4472, 30.5152",
+          "coordinates": "50.453059288509586, 30.51420349700723",
           "permanent_wiki_link": "https://en.wikipedia.org/wiki/Saint_Sophia_Cathedral,_Kyiv"
         },
         {
           "place_name": "Independence Square",
           "intriguing_title": "The Heart of Kyiv",
           "description": "Independence Square, known as Maidan Nezalezhnosti, is the central square of Kyiv and a focal point for political and social events. It has been the site of numerous protests and celebrations, including the 2004 Orange Revolution and the 2014 Euromaidan protests. The square is surrounded by significant buildings and offers a vibrant atmosphere.",
-          "coordinates": "50.4505, 30.5235",
+          "coordinates": "50.45107395804086, 30.523456968171097",
           "permanent_wiki_link": "https://en.wikipedia.org/wiki/Independence_Square,_Kyiv"
         },
         {
           "place_name": "Motherland Monument",
           "intriguing_title": "A Symbol of Strength",
           "description": "The Motherland Monument is a towering statue that stands at 62 meters tall, representing the Soviet victory in World War II. It is part of the Museum of the Great Patriotic War and offers panoramic views of Kyiv from its observation deck. The monument is an iconic symbol of the city and a popular tourist attraction.",
-          "coordinates": "50.4049, 30.5114",
+          "coordinates": "50.42670258098328, 30.563030639333892",
           "permanent_wiki_link": "https://en.wikipedia.org/wiki/Motherland_Monument"
         },
         {
           "place_name": "Andriyivskyy Descent",
           "intriguing_title": "The Montmartre of Kyiv",
           "description": "Andriyivskyy Descent is a historic street in Kyiv known for its bohemian atmosphere and artistic vibe. It is lined with galleries, shops, and cafes, making it a popular destination for both locals and tourists. The street connects the Upper Town with the Lower Town and features stunning architecture, including St. Andrew's Church.",
-          "coordinates": "50.4572, 30.5111",
+          "coordinates": "50.45989538858743, 30.51617864531704",
           "permanent_wiki_link": "https://en.wikipedia.org/wiki/Andriyivskyy_Descent"
         }
       ]

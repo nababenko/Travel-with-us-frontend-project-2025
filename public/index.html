@@ -769,9 +769,19 @@
         /* MOBILE (max-width: 768px) */
         @media (max-width: 768px) {
 
-            /* HEADER: ФІКС ДЛЯ БУРГЕР-МЕНЮ */
+
+            body {
+                padding: 0 5vw;
+            }
+
+
+            #countries_sect {
+                margin: 20vh 0;
+            }
+
+
             header {
-                margin: 0 5vw;
+                margin: 0;
                 font-size: 18px;
                 top: 10px;
             }
@@ -780,14 +790,14 @@
                 flex-wrap: wrap;
             }
 
-            /* ПОКАЗУЄМО кнопку бургера */
+
             .menu-toggle {
                 display: block;
                 order: 2;
                 margin-left: auto;
             }
 
-            /* ПРИХОВУЄМО навігаційні посилання за замовчуванням */
+
             .main_nav_links-wrapper {
                 display: none;
                 flex-direction: column;
@@ -795,32 +805,24 @@
                 order: 3;
                 padding-top: 15px;
                 margin-left: 0;
-
-                /* Вирівнюємо вміст обгортки (всі посилання) по правому краю */
                 align-items: flex-end;
             }
 
             .menu_column {
-                /* Вирівнюємо колонку по правому краю */
                 align-items: flex-end;
                 width: 100%;
             }
 
-            /* Стилі для посилань всередині відкритого меню */
             .main_nav_links-wrapper a {
                 margin-left: 0;
-                /* Текст посилань також по правому краю */
                 text-align: right;
                 padding: 5px 0;
             }
 
-            /* СТИЛЬ ПРИ ВІДКРИТТІ МЕНЮ */
             .menu-open .main_nav_links-wrapper {
                 display: flex;
-                /* ПОКАЗУЄМО меню */
             }
 
-            /* Видаляємо всі flex-grow елементи для мобільного */
             .spacer {
                 display: none;
             }
@@ -902,34 +904,83 @@
             }
 
 
-            /* City title */
+            /* City Image/Globus АДАПТАЦІЯ */
+            #cn_sect img {
+                height: auto;
+                max-width: 100%;
+            }
+
             #city_name {
                 font-size: 12vw;
                 letter-spacing: 3px;
-                top: 45%;
+                top: 40%;
             }
 
-            /* PTV grid: Перехід на один стовпець */
+            /* PTV Grid АДАПТАЦІЯ (1 стовпець) */
             .parent_ptv {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
+                gap: 20px;
+                width: 100%;
+                margin: 0;
+            }
+
+            #ptv_sect h2 {
+                margin: 0 0 3vh 0;
             }
 
             .parent_ptv div {
+                grid-area: unset !important;
                 text-align: left !important;
+                padding: 15px;
+            }
+
+            /* Map Section АДАПТАЦІЯ */
+            #map_sect {
+                padding: 0 5vw;
+                /* Зменшуємо padding */
+            }
+
+            #map_sect h2 {
+                margin-left: 0;
             }
         }
 
         /* TABLET (min-width: 768px and max-width: 1024px) */
         @media (min-width: 768px) and (max-width: 1024px) {
-            header {
-                font-size: 20px;
+
+            /* ДОДАНО: Універсальний padding для контенту на планшетах */
+            body {
+                padding: 0 4vw;
             }
 
-            /* PTV blocks: Перехід на два стовпці */
+            /* КОРЕКЦІЯ: Прибираємо горизонтальний margin, щоб body padding працював */
+            #countries_sect {
+                margin: 20vh 0;
+            }
+
+            header {
+                font-size: 20px;
+                margin: 0;
+            }
+
+            /* City Image/Globus АДАПТАЦІЯ */
+            #cn_sect img {
+                height: auto;
+                max-width: 100%;
+            }
+
+            /* PTV Grid АДАПТАЦІЯ (2 стовпці) */
             .parent_ptv {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: auto;
+                gap: 30px;
+                width: 100%;
+                margin: 0;
+            }
+
+            #ptv_sect h2 {
+                margin: 0 0 3vh 0;
             }
 
             .div1,
@@ -940,6 +991,15 @@
                 grid-area: unset;
             }
 
+            /* Map Section АДАПТАЦІЯ */
+            #map_sect {
+                padding: 0 4vw;
+
+            }
+
+            #map_sect h2 {
+                margin-left: 0;
+            }
         }
     </style>
 </head>

@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-// Якщо ви використовуєте 'three/examples/js/loaders/GLTFLoader'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// Якщо GLTFLoader не знайдено, перевірте шлях імпорту (це залежить від конфігурації React)
 
 
 function HeroSection() {
@@ -127,7 +125,6 @@ function HeroSection() {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
             container.removeChild(renderer.domElement);
-            // Додатково можна очистити пам'ять Three.js, викликавши dispose на об'єктах
         };
 
         // === Three.js Logic End ===

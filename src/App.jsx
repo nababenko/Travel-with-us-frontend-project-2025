@@ -12,13 +12,10 @@ function App() {
     const [data, setData] = useState(null);
 
     return (
-        // Обгортаємо, оскільки повертаємо більше одного елемента
         <>
-            {/* 👈 РОЗМІЩУЄМО ТУТ: ScrollToHash тепер слухає маршрути */}
             <ScrollToHash />
 
             <Routes>
-                {/* ТУТ МАЮТЬ БУТИ ЛИШЕ <Route> або <React.Fragment> */}
                 <Route path="/" element={<HomePage />} />
                 <Route path="/city/:cityName" element={<CityPage />} />
                 <Route path="/questionnaire" element={<QuestionnairePage />} />

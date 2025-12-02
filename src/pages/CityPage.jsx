@@ -22,6 +22,8 @@ function CityPage() {
     const placesToVisit = cityData ? cityData.places_to_visit : [];
     const finalDisplayName = displayCityName.toUpperCase();
 
+    document.title = `${finalDisplayName} || Travel with us`;
+
     if (!cityData) {
 
         return (

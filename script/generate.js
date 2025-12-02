@@ -100,13 +100,13 @@ Country: ${country}
 
 
 async function main() {
-    console.log("⏳ Отримую список країн...");
+    console.log(" Отримую список країн...");
     const capitals = await getCapitalsList();
 
     const finalData = { destinations: [] };
 
     for (const { country, capital } of capitals) {
-        console.log(`\n🌍 Генерація: ${capital}, ${country} ...`);
+        console.log(`\n Генерація: ${capital}, ${country} ...`);
 
         const cityData = await generateCityInfo(country, capital);
 
@@ -124,8 +124,8 @@ async function main() {
         "utf-8"
     );
 
-    console.log("\n🎉 Файл travel-guide.json оновлено!");
-    console.log(`📁 Шлях: ${OUTPUT_PATH}`);
+    console.log("\n Файл travel-guide.json оновлено!");
+    console.log(` Шлях: ${OUTPUT_PATH}`);
 }
 
 main();

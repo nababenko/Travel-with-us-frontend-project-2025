@@ -12,12 +12,11 @@ function QuestionnaireForm({ onResult }) {
             [id]: value
         }));
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:5000/api/ai/evaluate-survey", {
+            const response = await fetch("https://server-travel-with-us.onrender.com/api/ai/evaluate-survey", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)

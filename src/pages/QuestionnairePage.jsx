@@ -4,7 +4,8 @@ import QuestionnaireForm from '../components/QuestionnaireForm';
 import Footer from '../components/Footer';
 
 function QuestionnairePage() {
-    const [city, setCity] = useState("City");
+    const [city, setCity] = useState("");
+    document.title = "Traveler's Questionnaire";
 
     const pageStyle = {
         backgroundImage: 'url(assets/form_background.jpg)',
@@ -12,7 +13,6 @@ function QuestionnairePage() {
         color: 'white',
         minHeight: '100vh',
     };
-
     return (
         <div style={pageStyle}>
             <Header />

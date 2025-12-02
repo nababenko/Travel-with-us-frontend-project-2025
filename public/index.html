@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,79 +10,107 @@
     <meta name="author" content="Babenko Anastasiia, Ovsianyk Oksana">
     <link rel="icon" type="image/x-icon" href="assets/web_icon.png">
     <style>
-        /*HEADER*/
         * {
-        margin: 0;
+            margin: 0;
         }
-        footer{
-            margin-top: 10vh;
-            margin-bottom: 1vh;
-        }
-        header{
+
+        /*HEADER*/
+        header {
             margin: 0 3.51vw;
             position: sticky;
             top: 20px;
-            font-size: 24px;
+            font-size: 27px;
             z-index: 10;
         }
-        header a{
+
+        header a {
             text-align: right;
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        header a:hover{
+
+        header a:hover {
             color: #061f2c;
         }
-        .header_light a{
+
+        .header_light a {
             color: white;
             transition: all 0.6s ease;
         }
-        .header_dark a{
+
+        .header_dark a {
             color: #495865;
         }
-        nav{
+
+        /* НАВІГАЦІЯ НА ДЕСКТОПІ */
+        nav {
             display: flex;
+            width: 100%;
+            align-items: center;
         }
+
         #travel_with_us {
             margin: 0;
             text-align: left;
         }
-        nav>a{
+
+        .main_nav_links-wrapper {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .main_nav_links-wrapper>.menu_column,
+        .main_nav_links-wrapper>a {
             margin-left: 6vw;
         }
-        .menu_column{
+
+        .menu_column {
             display: flex;
             flex-direction: column;
         }
-        .menu_column div{
-            width: 120%;
+
+        .menu_column div {
             text-align: right;
         }
-        .header_light #lined_a{
+
+        .header_light #lined_a {
             border-bottom: white solid 1px;
             border-top: white solid 1px;
         }
-        .header_dark #lined_a{
+
+        .header_dark #lined_a {
             border-bottom: 1px solid #5D7081;
             border-top: 1px solid #5D7081;
         }
-        .spacer{
-            flex-grow: 1;
+
+        /* Приховуємо кнопку бургера на десктопі */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: inherit;
         }
 
+        footer {
+            margin-top: 10vh;
+            margin-bottom: 1vh;
+        }
 
-        /* --------------- MAIN PAGE ------------*/
-        /*how it works*/
-        #hiw_sect{
+        /* --------------- ОСНОВНІ СЕКЦІЇ ------------*/
+        /* how it works */
+        #hiw_sect {
             margin: 20vh 0;
         }
-        #step_text{
+
+        #step_text {
             margin-left: 10%;
             color: #B3AFAE;
             font-weight: bold;
             font-size: 3.5vh;
         }
-        .hiw_wrapper{
+
+        .hiw_wrapper {
             display: flex;
             text-align: center;
             width: 80%;
@@ -91,38 +120,46 @@
             font-weight: bold;
             color: #5D7081;
         }
-        .hiw_step{
+
+        .hiw_step {
             display: flex;
+            flex-direction: column;
             width: 16vw;
-            justify-items: center;
-            justify-content: center;
-            margin: 8vh 0;
+            align-items: center;
+            margin: 8vh 2vw;
         }
-        .step-1, .step-3{
+
+        .step-1,
+        .step-3 {
             margin-top: 15%;
         }
-        .step-1 span{
-            color: #9BB7CF;
-        }
-        .step-2 span{
-            color: #DAC3C0;
-        }
-        .step-3 span{
-            color: #B3AFAE;
-        }
-        .hiw_step span{
+
+        .hiw_step span {
             position: relative;
-            top: 15%;
             font-size: 10vh;
             margin-right: 15px;
             font-weight: normal;
         }
-        .hiw_wrapper img{
+
+        .step-1 span {
+            color: #9BB7CF;
+        }
+
+        .step-2 span {
+            color: #DAC3C0;
+        }
+
+        .step-3 span {
+            color: #B3AFAE;
+        }
+
+        .hiw_wrapper img {
             width: 11vw;
             height: 9vh;
             margin: auto;
         }
-        #hiw_line{
+
+        #hiw_line {
             font-size: 4vh;
             letter-spacing: 8px;
             color: #5D7081;
@@ -131,7 +168,7 @@
 
 
 
-        /*cards*/
+        /* cards */
         #card_sect {
             display: flex;
             justify-content: center;
@@ -139,20 +176,27 @@
             width: 80%;
             margin: 15vh auto;
         }
-        .card1{
+
+        .card1 {
             background-image: url("/assets/card1.png");
-            background-size: cover;
         }
-        .card2{
+
+        .card2 {
             background-image: url("/assets/card2.png");
+        }
+
+        .card1,
+        .card2 {
             background-size: cover;
         }
-        .card_back{
+
+        .card_back {
             width: 100%;
             aspect-ratio: 1 / 1;
             max-height: 75vh;
         }
-        .card{
+
+        .card {
             padding: 15% 5%;
             height: 70%;
             color: white;
@@ -161,23 +205,28 @@
             transition: all 0.8s ease;
             pointer-events: none;
         }
-        .card_back:hover .card{
+
+        .card_back:hover .card {
             opacity: 1;
             background-color: rgba(0, 0, 0, 0.8);
             pointer-events: auto;
         }
-        .card_head{
+
+        .card_head {
             font-size: 2vw;
             font-weight: bold;
         }
-        .card_text{
+
+        .card_text {
             font-size: 1.3vw;
             margin: 12% 0;
         }
-        .card_footer{
+
+        .card_footer {
             font-size: 1.5vw;
         }
-        .card_wrapper>p{
+
+        .card_wrapper>p {
             font-size: 3vh;
             font-weight: bold;
             color: #546d8a;
@@ -187,21 +236,23 @@
 
         /* Statistics */
 
-
-        h2{
+        h2 {
             font-size: 7vh;
             color: #5D7081;
             margin: 0 10%;
         }
-        #stat_sect img{
+
+        #stat_sect img {
             width: 630px;
         }
-        .stat_wrapper{
+
+        .stat_wrapper {
             display: flex;
             justify-content: center;
             gap: 15%;
             margin: 10vh 0;
         }
+
         .doughnut-chart {
             width: 100%;
             aspect-ratio: 1/1;
@@ -210,29 +261,24 @@
             margin-bottom: 5vh;
             transition: all 0.8s ease;
         }
-        .doughnut-chart:hover{
+
+        .doughnut-chart:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(1,1,1,.5);
-        }
-        .chart1{
-            background: conic-gradient(
-                    #e6c8c8 0% 75%,
-                    #d3d3d3 75% 100%
-            );
+            box-shadow: 0 0 30px rgba(1, 1, 1, .5);
         }
 
-        .chart2{
-            background: conic-gradient(
-                    #9BB7CF 0% 85%,
-                    #d3d3d3 85% 100%
-            );
+        .chart1 {
+            background: conic-gradient(#e6c8c8 0% 75%, #d3d3d3 75% 100%);
         }
-        .chart3{
-            background: conic-gradient(
-                    #b6b1af 0% 13%,
-                    #d3d3d3 13% 100%
-            );
+
+        .chart2 {
+            background: conic-gradient(#9BB7CF 0% 85%, #d3d3d3 85% 100%);
         }
+
+        .chart3 {
+            background: conic-gradient(#b6b1af 0% 13%, #d3d3d3 13% 100%);
+        }
+
         .doughnut-chart::after {
             content: '';
             position: absolute;
@@ -244,45 +290,54 @@
             background-color: white;
             border-radius: 50%;
         }
+
         .doughnut-chart:hover::after {
             box-shadow: 0 0 30px rgba(1, 1, 1, .5) inset;
             transition: all 0.8s ease;
         }
 
-        .diagram{
+        .diagram {
             width: 15vw;
             text-align: center;
         }
-        .stat_percent{
+
+        .stat_percent {
             font-size: 3vw;
         }
-        .percent1{
+
+        .percent1 {
             color: #b59696;
         }
-        .percent2{
+
+        .percent2 {
             color: #546d8a;
         }
-        .percent3{
+
+        .percent3 {
             color: #646056;
         }
-        .stat_article{
+
+        .stat_article {
             font-weight: bold;
             font-size: 3vh;
             color: #5D7081;
         }
 
         /* 3d model*/
-        #welcome_sect{
+        #welcome_sect {
             position: relative;
         }
-        .space{
+
+        .space {
             height: 25px;
         }
-        .container{
+
+        .container {
             height: 500vh;
             background-image: url("/assets/background_scene1.jpg");
             background-size: cover;
         }
+
         #canvas-container {
             position: sticky;
             top: 0;
@@ -292,7 +347,12 @@
             justify-content: center;
             align-items: center;
         }
-        canvas { width: 100%; height: 100%;}
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
         .welcome_text {
             position: absolute;
             z-index: 2;
@@ -301,40 +361,47 @@
             color: white;
             text-shadow: 0 0 20px rgba(1, 1, 1, .3);
         }
-        .text1{
+
+        .text1 {
             top: 8%;
             left: 5%;
             text-align: left;
         }
-        .welcome_head{
+
+        .welcome_head {
             font-size: 6vh;
             letter-spacing: 5px;
         }
-        .text1 .welcome_article{
+
+        .text1 .welcome_article {
             font-size: 4vh;
         }
-        .text2{
+
+        .text2 {
             top: 25%;
             right: 10%;
             text-align: right;
         }
-        .text3{
+
+        .text3 {
             top: 50%;
             left: 5%;
             text-align: left;
         }
-        .text3 .welcome_article{
+
+        .text3 .welcome_article {
             font-size: 5.5vh;
         }
-        .text4{
+
+        .text4 {
             top: 60%;
             right: 10%;
             text-align: right;
         }
-        .text4 .welcome_article{
+
+        .text4 .welcome_article {
             font-size: 4vh;
         }
-
 
 
         /* countries */
@@ -371,13 +438,18 @@
             border-radius: 50%;
             transition: background 1s ease, transform 0.3s ease;
         }
-        .active-0, .active-4{
+
+        .active-0,
+        .active-4 {
             background: #DAC3C0;
         }
-        .active-1, .active-3{
+
+        .active-1,
+        .active-3 {
             background: #9BB7CF;
         }
-        .active-2{
+
+        .active-2 {
             background: #646056;
         }
 
@@ -393,16 +465,18 @@
         }
 
 
-        #countries_sect{
+        #countries_sect {
             margin: 20vh 10%;
         }
-        .countries_wrapper{
+
+        .countries_wrapper {
             display: flex;
             align-items: flex-start;
             gap: 20vw;
             margin-top: 8vh;
             min-height: 50vh;
         }
+
         .continents {
             display: flex;
             flex-direction: column;
@@ -417,26 +491,31 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .continent_name:hover{
+
+        .continent_name:hover {
             color: #646056;
         }
-        .continent-active{
+
+        .continent-active {
             color: #646056;
         }
+
         .countries {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5vh 10vw;
             grid-auto-flow: row;
-            opacity: 0; /*за допомогою дж змінювати*/
+            opacity: 0;
         }
+
         .country {
             font-size: 2.6vh;
             font-weight: bold;
             color: #4b6982;
             margin: 0;
         }
-        .progress{
+
+        .progress {
             font-size: 4vh;
             font-weight: bold;
             letter-spacing: 3px;
@@ -446,24 +525,24 @@
         }
 
 
-
-
-
         /* --------------- FORM PAGE ------------*/
-        /*FORM*/
         #form_wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 10%;
+            padding: 20px;
         }
-        #form_wrapper h3{
+
+        #form_wrapper h3 {
             position: relative;
             margin: 85px 0 20px 0;
-            left: -13%;
             font-size: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
-        #form_wrapper p{
+
+        #form_wrapper p {
             font-size: 50px;
         }
 
@@ -481,11 +560,11 @@
             width: 50%;
         }
 
-        form button{
-            position: relative;
+        /* Кнопка "Send" */
+        form button {
             width: 50%;
-            right: -50%;
-            bottom: -10%;
+            margin-top: 20px;
+            margin-left: auto;
             border-radius: 30px;
             font-weight: bold;
             font-size: 20px;
@@ -495,13 +574,15 @@
             border: none;
             transition: all 0.5s ease;
         }
-        form button:hover{
+
+        form button:hover {
             cursor: pointer;
             background: transparent;
             color: white;
             border: white solid 1px;
         }
-        form input{
+
+        form input {
             width: 100%;
             margin: 5px 0 20px 0;
             padding: 10px 0 10px 5px;
@@ -511,23 +592,21 @@
             color: white;
             font-size: 16px;
         }
-        form input::placeholder{
+
+        form input::placeholder {
             color: white;
         }
-        form input:focus{
+
+        form input:focus {
             outline: none;
         }
-        #form_result{
+
+        #form_result {
             margin-top: 5vh;
         }
 
 
-
-
         /* --------------- CITY PAGE ------------*/
-
-        /*main*/
-        /*GLOBE*/
         #cn_sect {
             position: relative;
             display: flex;
@@ -535,10 +614,12 @@
             align-items: center;
             margin-bottom: 5vh;
         }
+
         #cn_sect img {
             z-index: 0;
             height: 86vh;
         }
+
         #city_name {
             position: absolute;
             z-index: 1;
@@ -547,17 +628,15 @@
             letter-spacing: 18px;
             color: #d1d1d1;
             text-shadow: 4px 4px 16px #000000;
-            -webkit-text-stroke-color: #303b43;
-            -webkit-text-stroke-width: thin;
         }
 
-        /*PTV*/
-
-        #ptv_sect h2{
+        /* PTV */
+        #ptv_sect h2 {
             margin: 0 0 3vh 10%;
             font-size: 50px;
             color: #303b43;
         }
+
         .parent_ptv {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -566,58 +645,307 @@
             grid-row-gap: 40px;
             color: white;
         }
-        .parent_ptv img{
+
+        .parent_ptv img {
             width: 2vw;
             position: relative;
             top: 4%;
             margin: 0 10px;
         }
-        .ptv_name{
+
+        .ptv_name {
             font-size: 30px;
             font-weight: bold;
             margin-top: 10px;
             margin-bottom: 5px;
         }
-        .ptv_head{
+
+        .ptv_head {
             font-size: 18px;
             font-weight: lighter;
             font-style: italic;
             margin-bottom: 10px;
         }
-        .ptv_article{
+
+        .ptv_article {
             font-size: 20px;
             margin-bottom: 5px;
         }
-        .parent_ptv div{
+
+        .parent_ptv div {
             padding: 20px 12px;
         }
-        .parent_ptv a{
+
+        .parent_ptv a {
             cursor: pointer;
             color: white;
         }
-        .div1 { grid-area: 1 / 1 / 2 / 3; background: #B3AFAE}
-        .div2 { grid-area: 1 / 3 / 2 / 5; background: #9BB7CF; text-align: right}
-        .div2 img{rotate: 90deg;}
-        .div3 { grid-area: 2 / 1 / 3 / 2; background: #DAC3C0}
-        .div3 img{rotate: -90deg;}
-        .div4 { grid-area: 2 / 2 / 3 / 4; background: #808080;  text-align: center}
-        .div4 img{rotate: -90deg;}
-        .div5 { grid-area: 2 / 4 / 3 / 5; background: #DAC3C0; text-align: right}
-        .div5 img{rotate: 180deg;}
 
-        #map_sect{
+        .div1 {
+            grid-area: 1 / 1 / 2 / 3;
+            background: #B3AFAE
+        }
+
+        .div2 {
+            grid-area: 1 / 3 / 2 / 5;
+            background: #9BB7CF;
+            text-align: right
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+            background: #DAC3C0
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 4;
+            background: #808080;
+            text-align: center
+        }
+
+        .div5 {
+            grid-area: 2 / 4 / 3 / 5;
+            background: #DAC3C0;
+            text-align: right
+        }
+
+        .div2 img {
+            rotate: 90deg;
+        }
+
+        .div3 img {
+            rotate: -90deg;
+        }
+
+        .div4 img {
+            rotate: -90deg;
+        }
+
+        .div5 img {
+            rotate: 180deg;
+        }
+
+
+        #map_sect {
             margin-bottom: 20vh;
             margin-top: 20vh;
         }
-        #map_sect h2{
+
+        #map_sect h2 {
             margin-bottom: 5vh;
         }
-        #map_sect div{
+
+        #map_sect div {
             margin-left: 5%;
+        }
+
+        /* ---------------------- АДАПТИВНІСТЬ (media queries) ---------------------- */
+
+        /* MOBILE & TABLET: Об'єднана логіка для How it Works */
+        @media (max-width: 1024px) {
+
+            /* How it works: Перехід на колонковий макет */
+            .hiw_wrapper {
+                flex-direction: column;
+                width: 90%;
+                font-size: 3vh;
+            }
+
+            .hiw_step {
+                width: 100%;
+                margin: 5vh 0;
+            }
+
+            .hiw_wrapper img {
+                width: 40vw;
+                height: auto;
+            }
+
+            .hiw_step_arrow {
+                transform: rotate(40deg);
+            }
+        }
+
+        /* MOBILE (max-width: 768px) */
+        @media (max-width: 768px) {
+
+            /* HEADER: ФІКС ДЛЯ БУРГЕР-МЕНЮ */
+            header {
+                margin: 0 5vw;
+                font-size: 18px;
+                top: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            /* ПОКАЗУЄМО кнопку бургера */
+            .menu-toggle {
+                display: block;
+                order: 2;
+                margin-left: auto;
+            }
+
+            /* ПРИХОВУЄМО навігаційні посилання за замовчуванням */
+            .main_nav_links-wrapper {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                order: 3;
+                padding-top: 15px;
+                margin-left: 0;
+
+                /* Вирівнюємо вміст обгортки (всі посилання) по правому краю */
+                align-items: flex-end;
+            }
+
+            .menu_column {
+                /* Вирівнюємо колонку по правому краю */
+                align-items: flex-end;
+                width: 100%;
+            }
+
+            /* Стилі для посилань всередині відкритого меню */
+            .main_nav_links-wrapper a {
+                margin-left: 0;
+                /* Текст посилань також по правому краю */
+                text-align: right;
+                padding: 5px 0;
+            }
+
+            /* СТИЛЬ ПРИ ВІДКРИТТІ МЕНЮ */
+            .menu-open .main_nav_links-wrapper {
+                display: flex;
+                /* ПОКАЗУЄМО меню */
+            }
+
+            /* Видаляємо всі flex-grow елементи для мобільного */
+            .spacer {
+                display: none;
+            }
+
+            /* Cards */
+            #card_sect {
+                flex-direction: column;
+                gap: 8vh;
+                width: 90%;
+            }
+
+            .card_head {
+                font-size: 6vw;
+            }
+
+            .card_text {
+                font-size: 4vw;
+            }
+
+            .card_footer {
+                font-size: 5vw;
+            }
+
+
+            /* Statistics */
+            .stat_wrapper {
+                flex-direction: column;
+                gap: 10vh;
+            }
+
+            .diagram {
+                width: 60vw;
+                margin: auto;
+            }
+
+            .stat_percent {
+                font-size: 10vw;
+            }
+
+
+            /* 3D welcome text */
+            .welcome_text {
+                width: 250px;
+                font-size: 2.5vh;
+            }
+
+            .welcome_head {
+                font-size: 4vh;
+            }
+
+
+            /* Countries section */
+            .countries_wrapper {
+                flex-direction: column;
+                gap: 10vh;
+            }
+
+            .countries {
+                grid-template-columns: 1fr 1fr;
+                gap: 3vh 5vw;
+                opacity: 1 !important;
+            }
+
+
+            /* Form: Перехід на колонковий макет */
+            form {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            form div {
+                width: 100%;
+            }
+
+            /* Кнопка "Send" - повна ширина на мобільному */
+            form button {
+                width: 100%;
+                margin-left: 0;
+            }
+
+
+            /* City title */
+            #city_name {
+                font-size: 12vw;
+                letter-spacing: 3px;
+                top: 45%;
+            }
+
+            /* PTV grid: Перехід на один стовпець */
+            .parent_ptv {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .parent_ptv div {
+                text-align: left !important;
+            }
+        }
+
+        /* TABLET (min-width: 768px and max-width: 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            header {
+                font-size: 20px;
+            }
+
+            /* PTV blocks: Перехід на два стовпці */
+            .parent_ptv {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+
+            .div1,
+            .div2,
+            .div3,
+            .div4,
+            .div5 {
+                grid-area: unset;
+            }
+
         }
     </style>
 </head>
+
 <body>
-<div id="root"></div>
+    <div id="root"></div>
 </body>
+
 </html>

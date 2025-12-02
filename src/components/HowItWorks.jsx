@@ -10,7 +10,7 @@ function HowItWorks() {
                     <span className="step-number">I</span>
                     <p className="step-text">Choose <br /> country</p>
                 </div>
-                <img src="/assets/Arrow1.png" alt="arrow" />
+                <img className="hiw_step_arrow" src="/assets/Arrow1.png" alt="arrow" />
                 <div className="hiw_step step-2">
                     <span className="step-number">II</span>
                     <p className="step-text">Explore a curated list of incredible places</p>

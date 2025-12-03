@@ -777,12 +777,14 @@
             #countries_sect {
                 margin: 20vh 5vw;
             }
-
-            *{
-                transform: none !important;
-                box-shadow: none !important;
+            .card {
+                opacity: 1;
+                background-color: rgba(0, 0, 0, 0.8);
+                pointer-events: auto;
             }
-
+            .doughnut-chart:hover{
+                transform: none;
+            }
             header {
                 margin: 0;
                 font-size: 18px;
@@ -907,6 +909,8 @@
             form button {
                 width: 100%;
                 margin-left: 0;
+                opacity: 0.75;
+                background: lightgrey;
             }
 
 

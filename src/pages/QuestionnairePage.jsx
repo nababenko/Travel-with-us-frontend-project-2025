@@ -12,9 +12,6 @@ function QuestionnairePage() {
         backgroundSize: 'cover',
         color: 'white',
         minHeight: '100vh',
-        position: 'absolute',
-        top:0,
-        left:0,
     };
     return (
         <div style={pageStyle}>
